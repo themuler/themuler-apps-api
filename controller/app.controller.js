@@ -33,11 +33,10 @@ exports.saveApp = async (req, res, next) => {
 
 exports.deleteApp = async (req, res, next) => {
 	try {
-		const app = await appsRepo.delete(req.params.key);
+		await appsRepo.delete(req.params.key);
 		res.status(200).json({
 			success: true,
-			data: app,
-			message: 'App add successfully'
+			message: 'App removed'
 		});
 	} catch (error) {
 		next(error);
