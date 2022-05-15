@@ -12,7 +12,7 @@ app.get('/apps', appController.getApps);
 
 app.post('/apps', appController.saveApp);
 
-app.delete('/app/:key', appController.deleteApp)
+app.delete('/apps/:key', appController.deleteApp)
 
 app.use((err, req, res, next) => {
     res.status(500)
